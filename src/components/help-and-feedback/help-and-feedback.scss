@@ -1,3 +1,21 @@
-:host {
-    
+button.material {
+    &.icon-button {
+        margin: 0 6px;
+        height: 40px;
+        min-width: 0;
+        line-height: 24px;
+        padding: 6px;
+        width: 40px;
+        border-radius: 50%;
+        border-color: transparent;
+        outline: none;
+        color: inherit;
+        background-color: transparent;
+        display: flex;
+
+        .material-icons {
+            color: inherit;
+            font-size: 28px;
+        }
+    }
 }

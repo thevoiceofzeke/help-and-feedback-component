@@ -28,7 +28,7 @@ declare global {
 
   namespace StencilComponents {
     interface HelpAndFeedback {
-
+      'color': string;
     }
   }
 
@@ -51,7 +51,7 @@ declare global {
   }
   namespace JSXElements {
     export interface HelpAndFeedbackAttributes extends HTMLAttributes {
-
+      'color'?: string;
     }
   }
 }
