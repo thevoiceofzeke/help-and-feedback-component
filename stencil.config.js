@@ -1,7 +1,7 @@
 const sass = require('@stencil/sass');
 
 exports.config = {
-  namespace: 'top-app-bar',
+  namespace: 'help-and-feedback-component',
   outputTargets:[
     { 
       type: 'dist' 

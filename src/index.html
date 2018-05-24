@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-  <script src="/build/top-app-bar.js"></script>
+  <script src="https://unpkg.com/top-app-bar@0.1.1/dist/top-app-bar.js"></script>
+  <script src="/build/help-and-feedback-component.js"></script>
 
 </head>
 <body>
@@ -15,10 +16,7 @@
   </style>
 
   <top-app-bar first-name="MyUW" second-name="Bucky Backup" background="#c5050c" color="white">
-    <span slot="navigation-drawer">nav</span>
-    <span slot="help-and-feedback">h&amp;f</span>
-    <span slot="notifications-drawer">noties</span>
-    <span slot="profile-menu">prof</span>
+    <help-and-feedback slot="help-and-feedback"></help-and-feedback>
   </top-app-bar>
 
 </body>
