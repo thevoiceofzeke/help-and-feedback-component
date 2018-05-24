@@ -50,7 +50,7 @@ export class HelpAndFeedback {
             .then(response => response.json())
             .then(data => {
                 if (data.content) {
-                    this.content = data.content;
+                    this.content = data;
                 }   
           });
         }
