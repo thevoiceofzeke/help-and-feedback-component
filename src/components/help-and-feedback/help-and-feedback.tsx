@@ -49,9 +49,7 @@ export class HelpAndFeedback {
             return fetch(this.dataUrl)
             .then(response => response.json())
             .then(data => {
-                if (data.content) {
-                    this.content = data;
-                }   
+                this.content = data;
           });
         }
     }
