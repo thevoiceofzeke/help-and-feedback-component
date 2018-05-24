@@ -16,5 +16,5 @@ Include the script in your project:
 Use the component's HTML tag wherever you want:
 
 ```html
-<help-and-feedback-component></help-and-feedback-component>
+<help-and-feedback-component color="white" background="#0479a8"></help-and-feedback-component>
 ```

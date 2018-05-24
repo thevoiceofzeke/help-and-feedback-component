@@ -20,8 +20,7 @@ export class ModalHelpAndFeedback {
         // this.setColors(this.backgroundColor);    
     }
 
-    closeModal(event: UIEvent) {
-        console.log('emitting closure');
+    closeModal(event: UIEvent) {    
         this.closedModal.emit(event);
     }
 
