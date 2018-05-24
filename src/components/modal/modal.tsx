@@ -10,6 +10,7 @@ export class ModalHelpAndFeedback {
     @Element() modalElement: HTMLElement;
     @Prop({ mutable: true }) isModalOpen: boolean;
     @Prop() backgroundColor: string;
+    @Prop() content: string;
     @Event() closedModal: EventEmitter;
 
     // setColors(background: string) {
@@ -35,6 +36,9 @@ export class ModalHelpAndFeedback {
                         <button class='material icon-button' aria-label='close help and feedback' onClick={ (event: UIEvent) => this.closeModal(event) }>
                             <i class='material-icons'>close</i>
                         </button>
+                    </div>
+                    <div>
+                        {this.content}
                     </div>
                 </div>
             );

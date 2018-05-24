@@ -7,10 +7,15 @@ import { Component, Prop, Element, State, Listen } from '@stencil/core';
 
 export class HelpAndFeedback {
 
+    // Decorators
     @Element() iconButtonElement: HTMLElement;
     @Prop() color: string;
     @Prop() background: string;
+    @Prop() dataUrl: string;
     @State() isModalOpen: boolean = false;
+
+    // Variables
+    content: string;
     
     // Event listener
     @Listen('closedModal')
@@ -43,7 +48,17 @@ export class HelpAndFeedback {
 
     componentWillLoad() {
         this.setColors(this.color);    
+        if (this.dataUrl) {
+            return fetch(this.dataUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.content) {
+                    this.content = data.content;
+                }   
+          });
+        }
     }
+
   
     render() {
         return ([
@@ -55,9 +70,13 @@ export class HelpAndFeedback {
                     ? <modal-help-and-feedback onClick={ () => this.hideModal() } 
                         class='modal-container' 
                         is-modal-open='true' 
-                        background-color={this.background}>
+                        background-color={this.background}
+                        content={this.content}>
                     </modal-help-and-feedback>
-                    : <modal-help-and-feedback is-modal-open='false' background-color={this.background}></modal-help-and-feedback>
+                    : <modal-help-and-feedback is-modal-open='false' 
+                        background-color={this.background} 
+                        content={this.content}>
+                    </modal-help-and-feedback>
                 }
             </div>
         ]);

@@ -30,6 +30,7 @@ declare global {
     interface HelpAndFeedback {
       'background': string;
       'color': string;
+      'dataUrl': string;
     }
   }
 
@@ -54,6 +55,7 @@ declare global {
     export interface HelpAndFeedbackAttributes extends HTMLAttributes {
       'background'?: string;
       'color'?: string;
+      'dataUrl'?: string;
     }
   }
 }
@@ -64,6 +66,7 @@ declare global {
   namespace StencilComponents {
     interface ModalHelpAndFeedback {
       'backgroundColor': string;
+      'content': string;
       'isModalOpen': boolean;
     }
   }
@@ -88,6 +91,7 @@ declare global {
   namespace JSXElements {
     export interface ModalHelpAndFeedbackAttributes extends HTMLAttributes {
       'backgroundColor'?: string;
+      'content'?: string;
       'isModalOpen'?: boolean;
       'onClosedModal'?: (event: CustomEvent) => void;
     }
