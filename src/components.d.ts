@@ -28,6 +28,7 @@ declare global {
 
   namespace StencilComponents {
     interface HelpAndFeedback {
+      'background': string;
       'color': string;
     }
   }
@@ -51,7 +52,44 @@ declare global {
   }
   namespace JSXElements {
     export interface HelpAndFeedbackAttributes extends HTMLAttributes {
+      'background'?: string;
       'color'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ModalHelpAndFeedback {
+      'backgroundColor': string;
+      'isModalOpen': boolean;
+    }
+  }
+
+  interface HTMLModalHelpAndFeedbackElement extends StencilComponents.ModalHelpAndFeedback, HTMLStencilElement {}
+
+  var HTMLModalHelpAndFeedbackElement: {
+    prototype: HTMLModalHelpAndFeedbackElement;
+    new (): HTMLModalHelpAndFeedbackElement;
+  };
+  interface HTMLElementTagNameMap {
+    'modal-help-and-feedback': HTMLModalHelpAndFeedbackElement;
+  }
+  interface ElementTagNameMap {
+    'modal-help-and-feedback': HTMLModalHelpAndFeedbackElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'modal-help-and-feedback': JSXElements.ModalHelpAndFeedbackAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ModalHelpAndFeedbackAttributes extends HTMLAttributes {
+      'backgroundColor'?: string;
+      'isModalOpen'?: boolean;
+      'onClosedModal'?: (event: CustomEvent) => void;
     }
   }
 }
