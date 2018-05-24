@@ -15,13 +15,11 @@ export class HelpAndFeedback {
     @State() isModalOpen: boolean = false;
 
     // Variables
-    content: string;
+    content = {};
     
     // Event listener
     @Listen('closedModal')
-        closedModalHandler(event: UIEvent) {
-            console.log('got close modal event');
-            console.log(event);
+        closedModalHandler() {
             this.hideModal();
     }
 
@@ -31,7 +29,6 @@ export class HelpAndFeedback {
     }
 
     showModal(event: UIEvent) {
-        console.log('clicked the button');
         // Show a modal with static information
         if (this.isModalOpen) {
             event.preventDefault();

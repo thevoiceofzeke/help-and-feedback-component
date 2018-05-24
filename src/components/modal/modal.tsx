@@ -10,7 +10,7 @@ export class ModalHelpAndFeedback {
     @Element() modalElement: HTMLElement;
     @Prop({ mutable: true }) isModalOpen: boolean;
     @Prop() backgroundColor: string;
-    @Prop() content: string;
+    @Prop() content;
     @Event() closedModal: EventEmitter;
 
     // setColors(background: string) {
@@ -18,7 +18,11 @@ export class ModalHelpAndFeedback {
     // }
 
     componentWillLoad() {
-        // this.setColors(this.backgroundColor);    
+        // this.setColors(this.backgroundColor);   
+        console.log(this.content); 
+        if (this.content.links) {
+
+        }
     }
 
     closeModal(event: UIEvent) {    
@@ -37,9 +41,13 @@ export class ModalHelpAndFeedback {
                             <i class='material-icons'>close</i>
                         </button>
                     </div>
-                    <div>
-                        {this.content}
-                    </div>
+                    <ul>
+                        {this.content.links.map((link) =>
+                            <li>
+                                <a href={link.url}>{link.text}</a>
+                            </li>
+                        )}
+                    </ul>
                 </div>
             );
         } else {

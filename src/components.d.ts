@@ -66,7 +66,7 @@ declare global {
   namespace StencilComponents {
     interface ModalHelpAndFeedback {
       'backgroundColor': string;
-      'content': string;
+      'content': any;
       'isModalOpen': boolean;
     }
   }
@@ -91,7 +91,7 @@ declare global {
   namespace JSXElements {
     export interface ModalHelpAndFeedbackAttributes extends HTMLAttributes {
       'backgroundColor'?: string;
-      'content'?: string;
+      'content'?: any;
       'isModalOpen'?: boolean;
       'onClosedModal'?: (event: CustomEvent) => void;
     }
