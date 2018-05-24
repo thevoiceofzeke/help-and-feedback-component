@@ -1,6 +1,6 @@
 {
   "name": "help-and-feedback-component",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Material icon button made with StencilJS",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
